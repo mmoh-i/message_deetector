@@ -36,7 +36,7 @@ def preds():
         #checking if the prediction is 0
         if np.all(prediction_model== 0):
             prediction_key = "not-scam"
-            final_pred = 'The message: {} is {}'.format(pred_text, prediction_key)
+            final_pred = 'The message: {} is \n {}'.format(pred_text, prediction_key)
             return render_template("index.html", prediction=final_pred)
     
         elif np.all(prediction_model== 1):
