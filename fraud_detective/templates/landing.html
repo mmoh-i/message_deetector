@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fraud_detective</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='landing.css')}}">
+
+        <style>
+            a:hover {
+            
+                border: 1px solid white;
+            }
+            
+        </style>    
+    </head>
+    <body>
+        <div class="container">
+            <div class="signup">
+                <img src="/static/icon/ss.jpeg" height="50px" width="40px" >
+
+                <div class="content">
+                    <h2>Fraud Detective The Message Verifier</h2>
+                    <p>
+                          Fraud Detective is a tool that verifies the legitimacy of your messages.
+                        It utilizes a pre-trained model to accurately detect fraudulent messages
+                        with a success rate of 97%.
+                    </p>
+                    <div id="hrf">
+                        <a href="/signup">Register</a><a href="/login">Signin</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pic">
+                <img src="/static/icon/temD.png" height="100%" width="100%" >
+            </div>
+        </div>
+    
+        
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</html>

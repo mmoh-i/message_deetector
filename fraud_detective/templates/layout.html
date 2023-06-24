@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='signup.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='comic.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='predict.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+        <!--inline juery syntx-->
+        <script>
+            $(document).ready(function(){
+                $(".alert-danger").fadeOut(5000);
+                $(".close").click(function(){
+                    $(".alert-danger").fadeOut();
+                });
+
+                $(".alert-success").fadeOut(5000);
+                $(".open").click(function(){
+                    $(".alert-success").fadeOut(2000);
+                });
+
+                $(".burger-nav").click(function(){
+                    $("div.nv").toggleClass("open");
+                });
+
+                <!-- content pop up  -->
+                $(".check").click(function(){
+                    $("#blur").toggleClass("active")
+                    $("#popup").toggleClass("active");
+                    
+                });
+                /*$(".check").click(function(){
+                    $("#popup").toggleClass("active");
+                    
+                }); */ 
+                
+    
+            });
+        </script>
+        <style>
+            button:hover {
+                opacity: 0.5;
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+        </style>
+    </head>
+    <body onload="typeWriter()">
+        <div class="container" id="blur">
+            <header>
+                {% include "_nav.html" %}
+            </header>
+                <!--flsh messge syntx-->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                    {% if category == 'error' %}
+                    <div class="alert alert-danger" style="background-color:rgb(209, 88, 88);
+                    height: 50px; color: rgb(255, 180, 180); padding: 15px; margin-left: 20px;margin-right: 20px;
+                    align-content: center; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+                        {{ message }}
+                        <button type="button" class="close" style="background-color:inherit; float: right; color:rgb(77, 3, 3); border: none;">✘</button> 
+                    </div>
+                    {% else %}
+                    <div class="alert alert-success" style="background-color:rgb(59, 187, 238);
+                    height: 50px; color: rgb(30, 30, 230); padding: 15px; margin-left: 20px;margin-right: 20px;
+                    align-content: center; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;">
+                        {{ message }}
+                        <button type="button" class="open" style="background-color:inherit;float: right; color:rgba(30, 30, 230); border: none;">✔</button>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+                {% block content %}
+                
+                {% endblock %}
+
+
+            
+            <footer>
+                {% include "_footer.html" %}
+            </footer>
+
+        </div>
+        <!--blured bckground popup to show predictio sttus-->
+        <div id="popup">
+            <h3>
+                <p>{{ prediction }}</p>
+            </h3>
+            <a class="close" href="/home">close</a>
+        </div>
+</div>
+        
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        var i = 0;
+        var txt = 'As tech enthusiast,i love learning new things, seeking new challanges and ways to improve myself.\
+        most times when i\'m not busy learning bout the latest innovations especially in the field of AI or perhaps #DoingHardThings\
+        you can find me amidst the see of books or on the football field. I remain Mustapha Muhammad Ibrahim,A well drilled ALX Software Engineer.' ;
+        var speed = 50;
+
+        function typeWriter() {
+        if (i < txt.length) {
+        document.getElementById("about").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    </script>
+</html>

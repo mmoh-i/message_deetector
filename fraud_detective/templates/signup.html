@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}SignUp{% endblock %}
+
+{%block content %}
+<div class="all">
+    <form method="POST" class="form-body">
+        <label for="fullname">Full Name</label>
+        <input type="text" name="fullname" id="fullname" placeholder="fullname..." required>
+        <!--<label for="Username">Choose Username</label>
+        <input type="text" name="username" placeholder="Select Username..." required>-->
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email" placeholder="Enter e-mail..">
+        <label for="phone">phone no</label>
+        <input type="tel" name="phone" id="phone"  placeholder="+234 000 000 0000" pattern="^(+234)\s[0-9]{3}\s[0-9]{3}\s[0-9]{3}">
+        <label><input type="radio" name="radio"  id="male" value="male">Male</label>
+        <label><input type="radio" name="radio" id="female" value="female">Female</label>
+        <label for="password">Password</label>
+        <input type="password" name="password1" id="password1" placeholder="password">
+        <label for="retypePass">Password(Confirm)</label>
+        <input type="password" name="password2" id="password2" placeholder="Confirm password..">
+
+        <input type="submit" value="Sign Up"  class="signbtn" href="#">
+
+    </form>
+</div>
+{% endblock %} 

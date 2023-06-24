@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: black;
+    font-family: 'Comic Neue';
+}
+
+div.container {
+    /*color: white;*/
+    display: flex;
+    padding: 0px;
+    max-width: fit-content;
+    height: 100vh;
+    max-width: 100%;
+
+}
+div.signup{
+    padding: 60px;
+    width: 30%;
+    margin: 0;
+    
+
+}
+div.content {
+    background-color: #0000;
+    color: #fff;
+    /*border: 0.2px white dashed;*/
+    margin-top: 300px;
+    border-radius: 5px;
+    padding: 30px;
+
+}
+div.pic{
+    padding: 0;
+    width: 70%;
+    height:auto;
+    margin: 0;
+
+}
+#hrf {
+    margin-top: 2em;
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    background-color: #38761d;
+    margin: 10px;
+    padding: 2px;
+    border-radius: 3px;
+}

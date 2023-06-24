@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content%}
+<div class="container">
+    <div class="form-container">
+        <div class="form-body">
+            <h2>Login With</h2>
+            <div class="google">
+                
+                <a class="a1" href="#"><h6><img src="../static/icon/icons8-google-50.png" height="25px" width="25px">oogle</h6></a></div>
+            <div class="_or">or input the details</div>
+
+            <form method="POST" class="login_form">
+                <label for=" email">Email</label>
+                <input type="email" name="email" class="txtclass" id="email" placeholder="Enter your email..">
+                <!--password-->
+                <label for="password">Password</label>
+                <input type="password" name="password" class="txtclass" placeholder="Enter your password..">
+                <!--submit-->
+                <input type="submit" value="Log in"  class="login">
+                <br>
+                <h6>forgot password <a href="#" class="fg_ps">click here..</a></h6>
+                <br>
+                <h6>Don't have an account? <a href="/signup" class="sign">Sign Up now..</a></h6>
+                
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
